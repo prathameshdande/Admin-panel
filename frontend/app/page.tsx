@@ -102,7 +102,7 @@ export default function AdminDashboard() {
         {/* Flats Tab */}
         {activeTab === 'flats' && (
           <div className="space-y-8 max-w-5xl">
-            <CreateFlatForm onSuccess={() => { refetch(); showToast('Flat created successfully'); }} onError={(msg) => showToast(msg, 'error')} />
+            <CreateFlatForm onSuccess={() => { refetch(); showToast('Flat created successfully'); }} onError={(msg: string) => showToast(msg, 'error')} />
             <FlatList flats={flats} onDelete={handleDeleteFlat} />
           </div>
         )}
@@ -110,7 +110,7 @@ export default function AdminDashboard() {
         {/* Rooms Tab */}
         {activeTab === 'rooms' && (
           <div className="space-y-8 max-w-5xl">
-            <CreateRoomForm flats={flats} onSuccess={() => { refetch(); showToast('Room created successfully'); }} onError={(msg) => showToast(msg, 'error')} />
+            <CreateRoomForm flats={flats} onSuccess={() => { refetch(); showToast('Room created successfully'); }} onError={(msg: string) => showToast(msg, 'error')} />
             <RoomList rooms={rooms} />
           </div>
         )}
@@ -118,21 +118,21 @@ export default function AdminDashboard() {
         {/* Beds Tab */}
         {activeTab === 'beds' && (
           <div className="space-y-8 max-w-5xl">
-            <CreateBedForm rooms={rooms} onSuccess={() => { refetch(); showToast('Bed created successfully'); }} onError={(msg) => showToast(msg, 'error')} />
-            <BedList beds={beds} onStatusUpdate={() => { refetch(); showToast('Bed status updated'); }} onError={(msg) => showToast(msg, 'error')} />
+            <CreateBedForm rooms={rooms} onSuccess={() => { refetch(); showToast('Bed created successfully'); }} onError={(msg: string) => showToast(msg, 'error')} />
+            <BedList beds={beds} onStatusUpdate={() => { refetch(); showToast('Bed status updated'); }} onError={(msg: string) => showToast(msg, 'error')} />
           </div>
         )}
 
         {/* Tenants Tab */}
         {activeTab === 'tenants' && (
           <div className="space-y-8 max-w-6xl">
-            <CreateTenantForm onSuccess={() => { refetch(); showToast('Tenant added successfully'); }} onError={(msg) => showToast(msg, 'error')} />
+            <CreateTenantForm onSuccess={() => { refetch(); showToast('Tenant added successfully'); }} onError={(msg: string) => showToast(msg, 'error')} />
             <TenantList
               tenants={tenants}
               availableBeds={availableBeds}
               onAssignment={() => { refetch(); showToast('Tenant assigned to new bed'); }}
               onDelete={handleDeleteTenant}
-              onError={(msg) => showToast(msg, 'error')}
+              onError={(msg: string) => showToast(msg, 'error')}
             />
           </div>
         )}

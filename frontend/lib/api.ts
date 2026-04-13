@@ -1,3 +1,5 @@
+import { Flat, Room, Bed, Tenant, DashboardItem } from '@/types';
+
 const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api';
 
 async function request<T>(
