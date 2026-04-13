@@ -25,7 +25,7 @@ export function Sidebar({ activeTab, onTabChange }: SidebarProps) {
             BedR Suite
           </span>
         </div>
-        <p className="text-xs text-slate-400 mt-1">Hostel Management System</p>
+        <p className="text-xs text-slate-400 mt-1">Property Management System</p>
       </div>
       <nav className="flex-1 p-5 space-y-2">
         {tabs.map((tab) => {
